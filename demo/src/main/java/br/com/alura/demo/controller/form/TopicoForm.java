@@ -4,15 +4,18 @@ import br.com.alura.demo.modelo.Curso;
 import br.com.alura.demo.modelo.Topico;
 import br.com.alura.demo.repository.CursoRepository;
 import com.sun.istack.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 
 
 public class TopicoForm {
 
-    @NotNull @NotEmpty
+    @NotNull @NotEmpty @Length(min=5)
     private  String titulo;
+    @NotNull @NotEmpty @Length(min=5)
     private String mensagem;
+    @NotNull @NotEmpty @Length(min=5)
     private String nomeCurso;
 
     public String getTitulo() {
